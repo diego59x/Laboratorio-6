@@ -7,11 +7,11 @@
 *@author Andrea Amaya #19357
 *@author Diego Alvarez #19498
 **********************************************************/
-
+import java.util.*;
 import java.util.TreeMap;
 public class Tree<K,V> extends MapAbstract<K,V>/**, Cloneable, Serializable*/{
 
-	protected TreeMap<K,V> tree = new TreeMap<K,V>;
+	protected TreeMap<K,V> tree = new TreeMap<K,V>();
 
 	public V get(K key){
 		return tree.get(key);
@@ -32,6 +32,10 @@ public class Tree<K,V> extends MapAbstract<K,V>/**, Cloneable, Serializable*/{
 
 	public boolean containsValue(V value){
 		return tree.containsValue(value);
+	}
+
+	public Set<Map.Entry<K,V>> entrySet(){
+		return tree.entrySet();
 	}
 
 }

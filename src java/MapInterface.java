@@ -7,6 +7,7 @@
 *@author Andrea Amaya #19357
 *@author Diego Alvarez #19498
 **********************************************************/
+import java.util.*;
 public interface MapInterface<K, V>{
 	/**
 	Pre: Tener un map para obtener el tamano
@@ -49,4 +50,7 @@ public interface MapInterface<K, V>{
 	* @param v Valor
 	*/	
 	public boolean containsValue(V v);
+
+
+	public Set<Map.Entry<K,V>> entrySet();
 }

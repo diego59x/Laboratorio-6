@@ -8,6 +8,7 @@
 *@author Diego Alvarez #19498
 **********************************************************/
 import java.util.HashMap;
+import java.util.*;
 
 public class Hash<K, V> extends MapAbstract<K, V>{
 	protected HashMap<K, V> cards = new HashMap<K, V>();
@@ -34,5 +35,13 @@ public class Hash<K, V> extends MapAbstract<K, V>{
 	
 	public boolean containsValue(V v){
 		return cards.containsValue(v);
+	}
+
+	public Set<Map.Entry<K,V>> entrySet(){
+		return cards.entrySet();
+	}
+
+	public Set<K> keySet(){
+		return cards.keySet();
 	}
 }

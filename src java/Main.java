@@ -62,7 +62,6 @@ public class Main{
 					}
 				}
 
-
 				pedir = true; //Se regresa a verdadero
 
 				switch(opcion_escogida) {
@@ -73,16 +72,28 @@ public class Main{
 						controlador.option2();
 						break;
 					case 3:
-						System.out.println(controlador.option3());
+						ArrayList<String> opt3 = controlador.option3();
+						for (int i=0; i<opt3.size(); i++) {
+							System.out.println(opt3.get(i));
+						}
+						break;
 						break;
 					case 4:
-						controlador.option4();
 						break;
 					case 5:
-						controlador.option5();
+						ArrayList<String> opt5 = controlador.option5();
+						for (int i=0; i<opt5.size(); i++) {
+							System.out.println(opt5.get(i));
+						}
 						break;
 					default:
-						controlador.option6();
+						ArrayList<ArrayList<String>> opt6 = controlador.option6();
+						for (int i=0; i<opt6.size(); i++) {
+							for (int j=0; j<opt6.get(i).size(); j++) {
+								System.out.println(opt6.get(i).get(j));
+							}
+							
+						}
 						break;	
 				}
 

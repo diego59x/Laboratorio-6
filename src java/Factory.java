@@ -13,11 +13,11 @@ public class Factory{
 	//Post: Intancia de tipo del mapa seleccionado
 	 * @param tipoMapa  Tipo de mapa a instanciar
 	*/
-	public MapInterface getStack(int tipoMapa){
+	public MapInterface getMap(int tipoMapa){
 		if (tipoMapa == 1) { //Es un hashMap
 			return new Hash<String, String>();
 		} else if (tipoMapa == 2) { //Es un linkedMap
-			return new Linked<String, String>();
+			return new Hash<String, String>();
 		} else { //Es un treeMap
 			return new Tree<String, String>();
 		}
