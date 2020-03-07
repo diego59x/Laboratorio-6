@@ -9,7 +9,7 @@
 **********************************************************/
 
 import java.util.TreeMap;
-public class Tree<K,V> extends AbstractMap<K,V> implements MapInterface<K,V>/**, Cloneable, Serializable*/{
+public class Tree<K,V> extends MapAbstract<K,V>/**, Cloneable, Serializable*/{
 
 	protected TreeMap<K,V> tree = new TreeMap<K,V>;
 
