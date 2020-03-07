@@ -3,7 +3,7 @@
 *							        Última fecha de modificación: 
 *							
 *@author Andrea Amaya #19357
-*@author Diego Alvarez
+*@author Diego Alvarez #19498
 **********************************************************/
 import java.util.*;
 import java.io.*; 

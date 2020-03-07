@@ -5,7 +5,7 @@
 *Interfaz que contiene los metodos que puede usar un Mapa
 *
 *@author Andrea Amaya #19357
-*@author Diego Alvarez
+*@author Diego Alvarez #19498
 **********************************************************/
 public interface MapInterface<K, V>{
 	/**

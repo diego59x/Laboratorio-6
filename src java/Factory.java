@@ -5,7 +5,7 @@
 *Factory para instanciar los mapas
 *
 *@author Andrea Amaya #19357
-*@author Diego Alvarez
+*@author Diego Alvarez #19498 
 **********************************************************/
 public class Factory{
 	/**
