@@ -1,8 +1,8 @@
 /**********************************************************
-*Hash.java			Fecha de creacion: 06 de marzo
+*Tree.java			Fecha de creacion: 06 de marzo
 *					Ultima fecha de modificacion: 06 de marzo
 *							
-*Funciones que lleva a cabo el mapa HashMap
+*Funciones que lleva a cabo el mapa TreeMap
 *
 *@author Andrea Amaya #19357
 *@author Diego Alvarez #19498

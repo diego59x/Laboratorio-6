@@ -16,12 +16,10 @@ public class Factory{
 	public MapInterface getStack(int tipoMapa){
 		if (tipoMapa == 1) { //Es un hashMap
 			return new Hash<String, String>();
-		} /*else if (tipoMapa == 2) { //Es un linkedMap
+		} else if (tipoMapa == 2) { //Es un linkedMap
 			return new Linked<String, String>();
 		} else { //Es un treeMap
 			return new Tree<String, String>();
-		}*/
-
-		return new Hash<String, String>();
+		}
 	}
 }
