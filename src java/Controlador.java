@@ -92,7 +92,7 @@ public class Controlador{
 
 	}
 
-	public ArrayList<String> option5(){ //Mostrar nombre y tipo de cartas existentes
+	public ArrayList<ArrayList<String>> option5(){ //Mostrar nombre y tipo de cartas existentes
 		// aqui 
 		ArrayList<ArrayList<String>> sortByType = new ArrayList<ArrayList<String>>();
 		ArrayList<String> typeInfo = new ArrayList<String>();

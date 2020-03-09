@@ -82,18 +82,19 @@ public class Main{
 					case 4:
 						break;
 					case 5:
-						ArrayList<String> opt5 = controlador.option5();
+						ArrayList<ArrayList<String>> opt5 = controlador.option5();
 						for (int i=0; i<opt5.size(); i++) {
-							System.out.println(opt5.get(i));
+							//System.out.println(opt6.get(i));
+							for (int j=0; j<opt5.get(i).size(); j++) {
+							   System.out.println(opt5.get(i).get(j));
+							}
+							
 						}
 						break;
 					case 6:
-						ArrayList<ArrayList<String>> opt6 = controlador.option6();
+						ArrayList<String> opt6 = controlador.option6();
 						for (int i=0; i<opt6.size(); i++) {
-							for (int j=0; j<opt6.get(i).size(); j++) {
-								System.out.println(opt6.get(i).get(j));
-							}
-							
+							System.out.println(opt6.get(i));
 						}
 						break;
 					case 7:
