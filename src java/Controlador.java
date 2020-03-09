@@ -12,7 +12,7 @@ import java.io.*;
 
 
 public class Controlador{
-	private MapInterface<String, String> availableCards = new Hash<String, String>();; //Cartas disponibles
+	private MapInterface<String, String> availableCards = new Hash<String, String>(); //Cartas disponibles
 	private MapInterface<String, String> userCollection; //Coleccion del usuario
 	private ArrayList<String> keys = new ArrayList<String>(); //Llaves en el texto
 	private ArrayList<String> values = new ArrayList<String>(); //Valores en el texto
@@ -87,12 +87,13 @@ public class Controlador{
 
 		return cards;
 	}
-
-	public ArrayList<ArrayList<String>> option4(){ //Ordenar por tipo coleccion
+	// ArrayList<ArrayList<String>>
+	public void option4(){ //Ordenar por tipo coleccion
 
 	}
 
 	public ArrayList<String> option5(){ //Mostrar nombre y tipo de cartas existentes
+		// aqui 
 		ArrayList<ArrayList<String>> sortByType = new ArrayList<ArrayList<String>>();
 		ArrayList<String> typeInfo = new ArrayList<String>();
 
@@ -124,8 +125,8 @@ public class Controlador{
 
 		return sortByType;
 	}
-
-	public ArrayList<ArrayList<String>> option6(){ //Ordenar por tipo cartas existentes
+//ArrayList<ArrayList<String>>
+	public ArrayList<String> option6(){
 		ArrayList<String> cards = new ArrayList<String>();
 		int monster = 0;
 		int spell = 0;
@@ -155,8 +156,11 @@ public class Controlador{
 		cards.add("_______________________________________");
 
 		return cards;
-	}
-
-
-
+	} //Ordenar por tipo cartas existentes
+	
 }
+
+
+
+
+

@@ -52,7 +52,7 @@ public class Main{
 					String opcion = scan.next();
 					try {
 						opcion_escogida = Integer.parseInt(opcion);
-						if (opcion_escogida<=6 && opcion_escogida>0) {
+						if (opcion_escogida<=7 && opcion_escogida>0) {
 							pedir = false;
 						} else {
 							System.out.println("Ingrese un numero dentro del rango");
@@ -77,7 +77,8 @@ public class Main{
 							System.out.println(opt3.get(i));
 						}
 						break;
-						break;
+						
+						//break;
 					case 4:
 						break;
 					case 5:
@@ -86,7 +87,7 @@ public class Main{
 							System.out.println(opt5.get(i));
 						}
 						break;
-					default:
+					case 6:
 						ArrayList<ArrayList<String>> opt6 = controlador.option6();
 						for (int i=0; i<opt6.size(); i++) {
 							for (int j=0; j<opt6.get(i).size(); j++) {
@@ -94,6 +95,8 @@ public class Main{
 							}
 							
 						}
+						break;
+					case 7:
 						break;	
 				}
 

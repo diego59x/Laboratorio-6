@@ -17,7 +17,7 @@ public class Factory{
 		if (tipoMapa == 1) { //Es un hashMap
 			return new Hash<String, String>();
 		} else if (tipoMapa == 2) { //Es un linkedMap
-			return new Hash<String, String>();
+			return new Linked<String, String>();
 		} else { //Es un treeMap
 			return new Tree<String, String>();
 		}
