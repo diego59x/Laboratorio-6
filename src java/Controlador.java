@@ -50,20 +50,7 @@ public class Controlador{
 
 	//Se lleva a cabo la operacion pedida
 	public void option1(Integer op, String nom){ //Agregar una carta
-		Integer key = op;
-		String val = nom;
-		try(FileWriter fw = new FileWriter("prueba.txt", true); //Se mandan los reportes de los voluntarios hacia los pacientes
-			BufferedWriter bw = new BufferedWriter(fw);
-			PrintWriter out = new PrintWriter(bw)){
-            if(key == 1){
-            	out.println(val + "| Monstruo");
-            }else if (key == 2){
-            	out.println(val + "| Hechizo");
-            }else{
-            	out.println(val + "| Encanto");
-            }
-		}catch (IOException e) {
-		}
+
 
 	}
 	public void option2(){ //Tipo de carta especifica
