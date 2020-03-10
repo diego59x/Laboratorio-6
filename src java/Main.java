@@ -25,7 +25,7 @@ public class Main{
 		
 		//Se revisa que se ingrese un entero dentro del rango
 		while(pedir){
-			String mapa = scan.next();
+			String mapa = scan.nextLine();
 			try {
 				mapa_escogido = Integer.parseInt(mapa);
 				if (mapa_escogido<=3 && mapa_escogido>0) {
@@ -50,7 +50,7 @@ public class Main{
 				
 				//Se revisa que la opcion sea un entero y este dentro del rango
 				while(pedir){
-					String opcion = scan.next();
+					String opcion = scan.nextLine();
 					try {
 						opcion_escogida = Integer.parseInt(opcion);
 						if (opcion_escogida<=7 && opcion_escogida>0) {
@@ -65,6 +65,7 @@ public class Main{
 
 				pedir = true; //Se regresa a verdadero
 
+
 				switch(opcion_escogida) {
 					case 1:
 						System.out.println("_______________________________________\n         INGRESE NOMBRE DE LA CARTA          \n_______________________________________");
@@ -72,7 +73,9 @@ public class Main{
 						System.out.println(controlador.option1(nombre));						
 						break;
 					case 2:
-						controlador.option2();
+						System.out.println("_______________________________________\n         INGRESE NOMBRE DE LA CARTA          \n_______________________________________");
+						String tipo = scan2.nextLine();
+						System.out.println(controlador.option2(tipo));		
 						break;
 					case 3:
 						ArrayList<String> opt3 = controlador.option3();
@@ -83,6 +86,10 @@ public class Main{
 						
 						//break;
 					case 4:
+						ArrayList<String> opt4 = controlador.option4();
+						for (int i=0; i<opt4.size(); i++) {
+							System.out.println(opt4.get(i));
+						}
 						break;
 					case 5:
 						ArrayList<ArrayList<String>> opt5 = controlador.option5();

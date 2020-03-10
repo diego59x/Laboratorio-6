@@ -50,19 +50,33 @@ public class Controlador{
 
 	//Se lleva a cabo la operacion pedida
 	public String option1(String nom){ //Agregar una carta
-		String mensaje = "______________\nSe agrego correctamente\n______________";
+		String mensaje = ""; 
 		//Se eliminan las llaves duplicadas
 		LinkedHashSet<String> hashSet = new LinkedHashSet<String>(keys);
 		ArrayList<String> clear_keys = new ArrayList<>(hashSet);
 		for (int i = 0; i<clear_keys.size(); i++) {
 	    	if (clear_keys.get(i).equalsIgnoreCase(nom)) {
 	    		userCollection.put(nom,values.get(i));
+	    		i = clear_keys.size();
+	    		mensaje = "_______________________________________\n\t SE AGREGO CORRECTAMENTE\n_______________________________________";
+	    	}else{
+	    		mensaje = "_______________________________________\n\t NO EXISTE LA CARTA\n_______________________________________";
 	    	}
 		}
+
 		return mensaje;
 	}
-	public void option2(){ //Tipo de carta especifica
-
+	public String option2(String nom){ //Tipo de carta especifica
+		String tipo = "";
+		//Se eliminan las llaves duplicadas
+		LinkedHashSet<String> hashSet = new LinkedHashSet<String>(keys);
+		ArrayList<String> clear_keys = new ArrayList<>(hashSet);
+		for (int i = 0; i<clear_keys.size(); i++) {
+	    	if (clear_keys.get(i).equalsIgnoreCase(nom)) {
+	    		tipo = values.get(i);
+	    	}
+		}
+		return tipo;
 	}
 
 	public ArrayList<String> option3(){ //Nombre, tipo, cantidad en coleccion
@@ -89,16 +103,48 @@ public class Controlador{
 		}
 
 		cards.add("_______________________________________");
+		cards.add("Tipo Encanto: " + charm);
+		cards.add("Tipo Monstruo: " + monster);
+		cards.add("Tipo Hechizo: " + spell);
+		cards.add("_______________________________________");
+
+		return cards;
+	}
+	
+	public ArrayList<String> option4(){ //Ordenar por tipo coleccion
+		ArrayList<String> cards = new ArrayList<String>();
+		int monster = 0;
+		int spell = 0;
+		int charm = 0;
+
+		//Se eliminan las llaves duplicadas
+		LinkedHashSet<String> hashSet = new LinkedHashSet<String>(values);
+		ArrayList<String> clear_values = new ArrayList<>(hashSet);
+
+		cards.add("Nombre_____________:Tipo_______________");
+		cards.add("_______________________________________");
+		for (Map.Entry<String, String> entry : userCollection.entrySet()) {
+	    	cards.add(entry.getKey() + " : " + entry.getValue());
+	    	if (entry.getValue().equalsIgnoreCase("monstruo")) {
+	    		monster++;
+	    	} else if (entry.getValue().equalsIgnoreCase("hechizo")) {
+	    		spell++;
+	    	} else if (entry.getValue().equalsIgnoreCase("encanto")){
+	    		charm++;
+	    	} else{
+	    		monster = 0;
+	    		spell = 0;
+	    		charm = 0;
+	    	}
+		}
+
+		cards.add("_______________________________________");
 		cards.add("Tipo Monstruo: " + monster);
 		cards.add("Tipo Hechizo: " + spell);
 		cards.add("Tipo Encanto: " + charm);
 		cards.add("_______________________________________");
 
 		return cards;
-	}
-	// ArrayList<ArrayList<String>>
-	public void option4(){ //Ordenar por tipo coleccion
-
 	}
 
 	public ArrayList<ArrayList<String>> option5(){ //Mostrar nombre y tipo de cartas existentes
@@ -134,7 +180,7 @@ public class Controlador{
 
 		return sortByType;
 	}
-//ArrayList<ArrayList<String>>
+
 	public ArrayList<String> option6(){
 		ArrayList<String> cards = new ArrayList<String>();
 		int monster = 0;
