@@ -1,5 +1,5 @@
 /**********************************************************
-*Linnked.java			Fecha de creacion: 06 de marzo
+*Linked.java		Fecha de creacion: 06 de marzo
 *					Ultima fecha de modificacion: 06 de marzo
 *							
 *Funciones que lleva a cabo el mapa Linked Map
