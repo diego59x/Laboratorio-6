@@ -13,6 +13,7 @@ public class Main{
 		String exepcion=""; //Si hay error se metera en esta variable
 		Controlador controlador = new Controlador();
 		Scanner scan = new Scanner(System.in);
+		Scanner scan2 = new Scanner(System.in);
 
 		Boolean pedir = true;
 		int mapa_escogido=0, opcion_escogida=0;
@@ -66,28 +67,9 @@ public class Main{
 
 				switch(opcion_escogida) {
 					case 1:
-					System.out.println("_______________________________________\n         ESCOJA EL TIPO DE CARTA          \n_______________________________________");
-						System.out.println("\n1. Monstruo \n2. Hechizo\n3. Encanto\n4. Salir\nElija la opcion: ");
-				
-						while(pedir){
-							String opcion = scan.next();
-							try {
-								opcion_escogida = Integer.parseInt(opcion);
-								if (opcion_escogida<=7 && opcion_escogida>0) {
-									pedir = false;
-								} else {
-									System.out.println("Ingrese un numero dentro del rango");
-								}	
-							} catch (Exception e){
-								System.out.println("Ingrese un numero entero");
-							}
-						}
-						pedir = true;
 						System.out.println("_______________________________________\n         INGRESE NOMBRE DE LA CARTA          \n_______________________________________");
-						String nombre = scan.next();
-
-						controlador.option1(opcion_escogida,nombre);
-						
+						String nombre = scan2.nextLine();
+						System.out.println(controlador.option1(nombre));						
 						break;
 					case 2:
 						controlador.option2();
@@ -105,11 +87,9 @@ public class Main{
 					case 5:
 						ArrayList<ArrayList<String>> opt5 = controlador.option5();
 						for (int i=0; i<opt5.size(); i++) {
-							//System.out.println(opt6.get(i));
 							for (int j=0; j<opt5.get(i).size(); j++) {
 							   System.out.println(opt5.get(i).get(j));
 							}
-							
 						}
 						break;
 					case 6:

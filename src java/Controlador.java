@@ -49,9 +49,17 @@ public class Controlador{
 	}
 
 	//Se lleva a cabo la operacion pedida
-	public void option1(Integer op, String nom){ //Agregar una carta
-
-
+	public String option1(String nom){ //Agregar una carta
+		String mensaje = "______________\nSe agrego correctamente\n______________";
+		//Se eliminan las llaves duplicadas
+		LinkedHashSet<String> hashSet = new LinkedHashSet<String>(keys);
+		ArrayList<String> clear_keys = new ArrayList<>(hashSet);
+		for (int i = 0; i<clear_keys.size(); i++) {
+	    	if (clear_keys.get(i).equalsIgnoreCase(nom)) {
+	    		userCollection.put(nom,values.get(i));
+	    	}
+		}
+		return mensaje;
 	}
 	public void option2(){ //Tipo de carta especifica
 
