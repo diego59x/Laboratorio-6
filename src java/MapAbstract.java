@@ -8,5 +8,7 @@
 *@author Diego Alvarez #19498
 **********************************************************/
 public abstract class MapAbstract<K, V> implements MapInterface<K, V>{
-
+	public boolean isEmpty(){
+		return size() ==0;
+	}
 }

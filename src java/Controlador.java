@@ -95,24 +95,31 @@ public class Controlador{
 		LinkedHashSet<String> hashSet = new LinkedHashSet<String>(values);
 		ArrayList<String> clear_values = new ArrayList<>(hashSet);
 
-		cards.add("Nombre_____________:Tipo_______________");
-		cards.add("_______________________________________");
-		for (Map.Entry<String, String> entry : userCollection.entrySet()) {
-	    	cards.add(entry.getKey() + " : " + entry.getValue());
-	    	if (entry.getValue().equalsIgnoreCase("monstruo")) {
-	    		monster++;
-	    	} else if (entry.getValue().equalsIgnoreCase("hechizo")) {
-	    		spell++;
-	    	} else {
-	    		trap++;
-	    	}
+		if (!userCollection.isEmpty()) {
+			cards.add("Nombre_____________:Tipo_______________");
+			cards.add("_______________________________________");
+			for (Map.Entry<String, String> entry : userCollection.entrySet()) {
+		    	cards.add(entry.getKey() + " : " + entry.getValue());
+		    	if (entry.getValue().equalsIgnoreCase("monstruo")) {
+		    		monster++;
+		    	} else if (entry.getValue().equalsIgnoreCase("hechizo")) {
+		    		spell++;
+		    	} else {
+		    		trap++;
+		    	}
+			}
+
+			cards.add("_______________________________________");
+			cards.add("Tipo Monstruo: " + monster);
+			cards.add("Tipo Hechizo: " + spell);
+			cards.add("Tipo Trampa: " + trap);
+			cards.add("_______________________________________");			
+		} else {
+			cards.add("_______________________________________");
+			cards.add("             NO HAY CARTAS");
+			cards.add("_______________________________________");
 		}
 
-		cards.add("_______________________________________");
-		cards.add("Tipo Monstruo: " + monster);
-		cards.add("Tipo Hechizo: " + spell);
-		cards.add("Tipo Trampa: " + trap);
-		cards.add("_______________________________________");
 
 		return cards;
 	}
@@ -128,25 +135,32 @@ public class Controlador{
 		ArrayList<String> clear_values = new ArrayList<>(hashSet);
 
 		//Se obtiene nombre y tipo
-		for (Map.Entry<String, String> entry : userCollection.entrySet()) {
-	    	cards.add(entry.getValue() + " : " + entry.getKey());
-	    	if (entry.getValue().equalsIgnoreCase("monstruo")) {
-	    		monster++;
-	    	} else if (entry.getValue().equalsIgnoreCase("hechizo")) {
-	    		spell++;
-	    	} else if (entry.getValue().equalsIgnoreCase("trampa")){
-	    		trap++;
-	    	} 
+		if (!userCollection.isEmpty()) {
+			for (Map.Entry<String, String> entry : userCollection.entrySet()) {
+		    	cards.add(entry.getValue() + " : " + entry.getKey());
+		    	if (entry.getValue().equalsIgnoreCase("monstruo")) {
+		    		monster++;
+		    	} else if (entry.getValue().equalsIgnoreCase("hechizo")) {
+		    		spell++;
+		    	} else if (entry.getValue().equalsIgnoreCase("trampa")){
+		    		trap++;
+		    	} 
+			}
+
+			Collections.sort(cards); //Se ordenan alfabeticamente
+			cards.add(0, "_______________________________________");
+			cards.add(0, "Tipo_____________:Nombre_______________"); 
+			cards.add("_______________________________________");
+			cards.add("Tipo Monstruo: " + monster);
+			cards.add("Tipo Hechizo: " + spell);
+			cards.add("Tipo Trampa: " + trap);
+			cards.add("_______________________________________");			
+		} else {
+			cards.add("_______________________________________");
+			cards.add("             NO HAY CARTAS");
+			cards.add("_______________________________________");			
 		}
 
-		Collections.sort(cards); //Se ordenan alfabeticamente
-		cards.add(0, "Tipo_____________:Nombre_______________"); 
-		cards.add(0, "_______________________________________");
-		cards.add("_______________________________________");
-		cards.add("Tipo Monstruo: " + monster);
-		cards.add("Tipo Hechizo: " + spell);
-		cards.add("Tipo Trampa: " + trap);
-		cards.add("_______________________________________");
 
 		return cards;
 	}

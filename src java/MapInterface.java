@@ -45,12 +45,21 @@ public interface MapInterface<K, V>{
 	public boolean containsKey(K k);
 
 	/**
-	Pre: La valor existe
+	Pre: El valor existe
 	Post: Retorna verdadero si el valor se encuentra en el mapa
 	* @param v Valor
 	*/	
 	public boolean containsValue(V v);
 
-
+	/**
+	Pre: 
+	Post: Retorna los elementos dentro del mapa
+	*/
 	public Set<Map.Entry<K,V>> entrySet();
+
+	/**
+	Pre: Hay un mapa
+	Post: Se retorna true si el mapa esta vacio
+	*/
+	public boolean isEmpty();
 }

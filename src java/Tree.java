@@ -37,5 +37,4 @@ public class Tree<K,V> extends MapAbstract<K,V>/**, Cloneable, Serializable*/{
 	public Set<Map.Entry<K,V>> entrySet(){
 		return tree.entrySet();
 	}
-
 }

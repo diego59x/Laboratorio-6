@@ -15,11 +15,11 @@ public class Factory{
 	*/
 	public MapInterface getMap(int tipoMapa){
 		if (tipoMapa == 1) { //Es un hashMap
-			return new Hash<String, String>();
+			return new Hash();
 		} else if (tipoMapa == 2) { //Es un linkedMap
-			return new Linked<String, String>();
+			return new Linked();
 		} else { //Es un treeMap
-			return new Tree<String, String>();
+			return new Tree();
 		}
 	}
 }

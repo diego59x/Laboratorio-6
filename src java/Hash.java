@@ -11,37 +11,38 @@ import java.util.HashMap;
 import java.util.*;
 
 public class Hash<K, V> extends MapAbstract<K, V>{
-	protected HashMap<K, V> cards = new HashMap<K, V>();
+	protected HashMap<K, V> hash = new HashMap<K, V>();
 
 	public int size(){
-		return cards.size();
+		return hash.size();
 	}
 
 	public V put(K k, V v){
-		return cards.put(k, v);
+		return hash.put(k, v);
 	}
 
 	public V remove(K k){
-		return cards.remove(k);
+		return hash.remove(k);
 	}
 
     public V get(K k){
-    	return cards.get(k);
+    	return hash.get(k);
     }
 
 	public boolean containsKey(K k){
-		return cards.containsKey(k);
+		return hash.containsKey(k);
 	}
 	
 	public boolean containsValue(V v){
-		return cards.containsValue(v);
+		return hash.containsValue(v);
 	}
 
 	public Set<Map.Entry<K,V>> entrySet(){
-		return cards.entrySet();
+		return hash.entrySet();
 	}
 
 	public Set<K> keySet(){
-		return cards.keySet();
+		return hash.keySet();
 	}
+
 }
